@@ -12,10 +12,12 @@ def are_you_sure(func):
             print('Aborted without running')
     return wrapped
 
+def main():
+    @are_you_sure
+    def dangerous_function(*args, **kwargs):
+        print(f'Running {dangerous_function.__name__} with {args,kwargs}')
 
-@are_you_sure
-def dangerous_function(*args, **kwargs):
-    print(f'Running {dangerous_function.__name__} with {args,kwargs}')
+    dangerous_function(1, "arg_example", name='lol')
 
 if __name__ == '__main__':
-    dangerous_function(1, "arg_example", name='lol')
+    main()
