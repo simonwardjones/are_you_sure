@@ -8,7 +8,7 @@ class TestAreYouSure():
 
         @are_you_sure
         def dangerous_function(*args, **kwargs):
-            print(f'running {__name__} with {args,kwargs}')
+            print(f'Running {__name__} with {args,kwargs}')
         dangerous_function()
         captured = capsys.readouterr()
         assert captured.out == 'Aborted without running\n'
@@ -18,7 +18,7 @@ class TestAreYouSure():
 
         @are_you_sure
         def dangerous_function(*args, **kwargs):
-            print(f'running {dangerous_function.__name__} with {args,kwargs}')
+            print(f'Running {dangerous_function.__name__} with {args,kwargs}')
         dangerous_function()
         captured = capsys.readouterr()
         assert captured.out == "Running dangerous_function with ((), {})\n"
