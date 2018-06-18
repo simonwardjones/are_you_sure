@@ -1,8 +1,12 @@
 from distutils.core import setup
 
+with open('README.md','r') as f:
+  readme = f.read()
+
 setup(name='are_you_sure',
-      version='1.0.0',
-      description='simple decorator to check before running',
+      version='1.0.1',
+      description='Simple decorator to check before running',
+      long_description=readme,
       author='Simon Ward-Jones',
       author_email='simonwardjones16@gmail.com',
       packages=['are_you_sure'],
